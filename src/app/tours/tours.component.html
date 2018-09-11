@@ -1,0 +1,113 @@
+<p>
+  tours works!
+</p>
+<ul class="tours">
+  <li *ngFor="let tour of tours"
+      [class.selected]="tour === selectedTour"
+      (click)="onSelect(tour)">
+    <span class="badge">{{tour.destination}}</span>
+  </li>
+</ul>
+
+
+<div *ngIf="selectedTour">
+
+
+  <!--<h2> {{selectedTour.destination | uppercase}} Details</h2>-->
+  <!--<div><span>destination </span>{{selectedTour.destination}}</div>-->
+  <!--<div>-->
+    <!--<label>rating: </label>-->
+    <!--<label>{{selectedTour.rating}}</label>-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--<label>experience: </label>-->
+    <!--<label>{{selectedTour.experience}}</label>-->
+  <!--</div>-->
+  <!--<div>-->
+    <!--<label>traveller: </label>-->
+    <!--<label>{{selectedTour.traveller.nick}}</label>-->
+  <!--</div>-->
+
+
+
+  <div class="container">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5" aria-expanded="false">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+          <p class="navbar-text navbar-right" >Posted on {{selectedTour.createdOn | date: 'dd.MM.yyyy'}}</p>
+        </div>
+      </div>
+    </nav>
+
+    <article >
+      <header>
+        <h1 >{{selectedTour.destination}}</h1>
+
+      </header>
+
+      <section >
+        <div style="color: #f8ce0b; display: inline-block; position: relative; font-family: FontAwesome; lb-prev:before">
+
+        <label >rating: </label>
+        <label>{{selectedTour.rating}} </label>
+        <span class="fa fa-star checked"></span>
+
+        </div>
+      </section>
+
+      <section >
+        <p style="line-height: 2">{{selectedTour.experience}}</p>
+      </section>
+
+      <footer>
+        <address>
+          Wrote: <span >{{selectedTour.traveller.nick}}</span>
+        </address>
+      </footer>
+      <hr/>
+    </article>
+
+    <footer>
+      <p>Created with Spring Boot</p>
+    </footer>
+
+  </div>
+
+
+
+
+
+
+  <!--<table class="table table-striped">-->
+    <!--<thead>-->
+    <!--<tr>-->
+      <!--<th class="hidden">Id</th>-->
+      <!--<th></th>-->
+      <!--<th>Destination</th>-->
+      <!--<th>Experience</th>-->
+      <!--<th>Rating</th>-->
+      <!--<th>Traveller</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr *ngFor="let tour of tours">-->
+      <!--<td class="hidden">{{tour.id}}</td>-->
+      <!--<td></td>-->
+      <!--<td>{{tour.destination}}</td>-->
+      <!--<td>{{tour.experience}}</td>-->
+      <!--<td>{{tour.rating}}</td>-->
+      <!--<td>{{tour.traveller.nick}}</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+</div>
